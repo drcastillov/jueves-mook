@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <jueves_adminhtml_juevesbackend_index>
+	<reference name="content">
+	  <block type="jueves/adminhtml_juevesbackend" name="juevesbackend" template="jueves/juevesbackend.phtml"/>
+	</reference>
+  </jueves_adminhtml_juevesbackend_index>
+  <jueves_adminhtml_jueves_index>
+	<reference name="content">
+	  <block type="jueves/adminhtml_jueves" name="jueves" />
+	</reference>
+  </jueves_adminhtml_jueves_index>
+</layout>

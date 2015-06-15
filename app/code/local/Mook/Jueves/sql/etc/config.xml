@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Mook_Jueves>
+      <version>0.1.0</version>
+    </Mook_Jueves>
+  </modules>
+  <global>
+    <helpers>
+      <jueves>
+        <class>Mook_Jueves_Helper</class>
+      </jueves>
+    </helpers>
+	<blocks>
+	  <jueves>
+		<class>Mook_Jueves_Block</class>
+	  </jueves>
+	</blocks>
+	<models>
+	  <jueves>
+		<class>Mook_Jueves_Model</class>
+		<resourceModel>jueves_mysql4</resourceModel>
+	  </jueves>
+	  <jueves_mysql4>
+		<class>Mook_Jueves_Model_Mysql4</class>
+		<entities>		  
+			  <jueves>
+				<table>test</table>
+			  </jueves>
+        </entities>
+	  </jueves_mysql4>
+	</models>
+	<resources>
+	  <jueves_setup>
+		<setup>
+		  <module>Mook_Jueves</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </jueves_setup>
+	  <jueves_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </jueves_write>
+	  <jueves_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </jueves_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <jueves>
+	    <use>admin</use>
+		<args>
+		  <module >Mook_Jueves</module>
+		  <frontName>admin_jueves</frontName>
+		</args>
+	  </jueves>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <jueves module="jueves">
+		<title>Jueves</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <juevesbackend module="jueves">
+			<title>Backend Page Title</title>
+			<sort_order>0</sort_order>
+			<action>admin_jueves/adminhtml_juevesbackend</action>
+		  </juevesbackend>
+		  <jueves module="jueves">
+		    <title>Manage Jueves</title>
+			<sort_order>0</sort_order>
+			<action>admin_jueves/adminhtml_jueves</action>
+		  </jueves>
+		</children>
+	  </jueves>
+	</menu>
+
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<jueves translate="title" module="jueves">
+			  <title>Jueves</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <juevesbackend translate="title">
+			<title>Backend Page Title</title>
+		  </juevesbackend>
+		  <jueves translate="title">
+			<title>Manage Jueves</title>
+			<sort_order>0</sort_order>
+		  </jueves>
+			  </children>
+			</jueves>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+
+	<layout>
+	  <updates>
+		<jueves>
+		  <file>jueves.xml</file>
+		</jueves>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 
