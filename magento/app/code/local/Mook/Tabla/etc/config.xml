@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+
+<config>
+	<modules>
+		<Mook_Tabla>
+			<version>0.0.1</version>
+		</Mook_Tabla>
+	</modules>
+
+
+	<global>
+        <models>
+            <tabla>
+                <class>Mook_Tabla_Model</class>
+                <resourceModel>tabla_mysql4</resourceModel>
+            </tabla>
+            <tabla_mysql4>
+                <class>Mook_Tabla_Model_Mysql4</class>
+            </tabla_mysql4>
+        </models>
+
+
+		<blocks>
+            <tabla>
+                <class>Mook_Tabla_Block</class>
+            </tabla>
+		</blocks>
+
+		<helpers>
+            <tabla>
+                <class>Mook_Tabla_Helper</class>
+            </tabla>
+		</helpers>
+
+	</global>
+
+    <admin>
+        <routers>
+            <tabla>
+                <use>admin</use>
+                <args>
+                    <module>Mook_Tabla</module>
+                    <frontName>tabla</frontName>
+                </args>
+            </tabla>
+        </routers>
+
+        <layout>
+            <updates>
+                <tabla>
+                    <file>tabla.xml</file>
+                </tabla>
+            </updates>
+        </layout>
+
+    </admin>
+
+</config>
+

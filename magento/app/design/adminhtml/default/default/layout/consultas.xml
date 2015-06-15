@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <consultas_adminhtml_consultasbackend_index>
+	<reference name="content">
+	  <block type="consultas/adminhtml_consultasbackend" name="consultasbackend" template="consultas/consultasbackend.phtml"/>
+	</reference>
+  </consultas_adminhtml_consultasbackend_index>
+</layout>

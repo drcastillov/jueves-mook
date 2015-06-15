@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <rene_adminhtml_rene_index>
+        <reference name="content">
+            <block type="mook_rene/adminhtml_rene" name="rene" />
+        </reference>
+    </rene_adminhtml_rene_index>
+</layout>

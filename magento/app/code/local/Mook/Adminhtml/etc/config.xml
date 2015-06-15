@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <version>0.1.0</version>
+    </modules>
+
+    <frontend>
+
+    </frontend>
+    <global>
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>Mook_Adminhtml_Block_Sales_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+    </global>
+</config>

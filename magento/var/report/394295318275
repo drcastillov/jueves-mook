@@ -1,0 +1,25 @@
+a:5:{i:0;s:1706:"Error in file: "/var/www/html/magento/app/code/core/Mage/Reports/sql/reports_setup/mysql4-install-1.6.0.0.php" - SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'report_compared_product_index' already exists, query was: CREATE TABLE `report_compared_product_index` (
+  `index_id` bigint UNSIGNED NOT NULL auto_increment COMMENT 'Index Id' ,
+  `visitor_id` int UNSIGNED NULL COMMENT 'Visitor Id' ,
+  `customer_id` int UNSIGNED NULL COMMENT 'Customer Id' ,
+  `product_id` int UNSIGNED NOT NULL COMMENT 'Product Id' ,
+  `store_id` smallint UNSIGNED NULL COMMENT 'Store Id' ,
+  `added_at` timestamp NOT NULL default 0 COMMENT 'Added At' ,
+  PRIMARY KEY (`index_id`),
+  UNIQUE `UNQ_REPORT_COMPARED_PRODUCT_INDEX_VISITOR_ID_PRODUCT_ID` (`visitor_id`, `product_id`),
+  UNIQUE `UNQ_REPORT_COMPARED_PRODUCT_INDEX_CUSTOMER_ID_PRODUCT_ID` (`customer_id`, `product_id`),
+  INDEX `IDX_REPORT_COMPARED_PRODUCT_INDEX_STORE_ID` (`store_id`),
+  INDEX `IDX_REPORT_COMPARED_PRODUCT_INDEX_ADDED_AT` (`added_at`),
+  INDEX `IDX_REPORT_COMPARED_PRODUCT_INDEX_PRODUCT_ID` (`product_id`),
+  CONSTRAINT `FK_REPORT_CMPD_PRD_IDX_CSTR_ID_CSTR_ENTT_ENTT_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_REPORT_CMPD_PRD_IDX_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `catalog_product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_REPORT_COMPARED_PRODUCT_INDEX_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `core_store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
+) COMMENT='Reports Compared Product Index Table' ENGINE=INNODB charset=utf8 COLLATE=utf8_general_ci";i:1;s:932:"#0 /var/www/html/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(645): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /var/www/html/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '1.6.0.0.1')
+#2 /var/www/html/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('1.6.0.0.1')
+#3 /var/www/html/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /var/www/html/magento/app/code/core/Mage/Core/Model/App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /var/www/html/magento/app/code/core/Mage/Core/Model/App.php(343): Mage_Core_Model_App->_initModules()
+#6 /var/www/html/magento/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#7 /var/www/html/magento/index.php(87): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:9:"/magento/";s:11:"script_name";s:18:"/magento/index.php";s:4:"skin";s:7:"default";}

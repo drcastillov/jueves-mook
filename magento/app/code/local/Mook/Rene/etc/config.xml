@@ -1,0 +1,122 @@
+<?xml  version="1.0" ?>
+<config>
+    <modules>
+        <Mook_Rene>
+            <version>0.1.0</version>
+        </Mook_Rene>
+    </modules>
+
+    <global>
+
+        <models>
+            <mook_rene>
+                <class>Mook_Rene_Model</class>
+                <resourceModel>rene_mysql4</resourceModel>
+            </mook_rene>
+            <rene_mysql4>
+                <class>Mook_Rene_Model_Mysql4</class>
+                <entities>
+                    <mook_rene>
+                        <table>rene</table>
+                    </mook_rene>
+                </entities>
+            </rene_mysql4>
+        </models>
+
+
+        <resources>
+            <rene_setup>
+                <setup>
+                    <module>Mook_Rene</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </rene_setup>
+            <rene_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </rene_write>
+            <rene_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </rene_read>
+        </resources>
+
+
+
+
+        <helpers>
+            <mook_rene>
+                <class>Mook_Rene_Helper</class>
+            </mook_rene>
+        </helpers>
+
+        <blocks>
+            <mook_rene>
+                <class>Mook_Rene_Block</class>
+            </mook_rene>
+        </blocks>
+
+
+    </global>
+
+    <admin>
+        <routers>
+            <mook_rene>
+                <use>admin</use>
+                <args>
+                    <module>Mook_Rene</module>
+                    <frontName>test</frontName>
+                </args>
+            </mook_rene>
+        </routers>
+
+    </admin>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <mook_rene translate="title" module="mook_rene">
+                        <title>Productos</title>
+                        <sort_order>1000</sort_order>
+                        <children>
+                            <mook_rene translate="title">
+                                <title>Productos</title>
+                            </mook_rene>
+                        </children>
+                    </mook_rene>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+
+    <adminhtml>
+        <menu>
+            <tmenu translate="title" module="mook_rene">
+                <title>Menu Rene</title>
+                <sort_order>9999</sort_order>
+                <children>
+                    <first_page module="mook_rene">
+                        <title>Rene</title>
+                        <action>test/adminhtml_rene/index</action>
+                    </first_page>
+
+                    <page module="mook_rene">
+                        <title>Formulario</title>
+                        <action>test/index/index</action>
+                    </page>
+
+                </children>
+            </tmenu>
+        </menu>
+    </adminhtml>
+
+
+</config>

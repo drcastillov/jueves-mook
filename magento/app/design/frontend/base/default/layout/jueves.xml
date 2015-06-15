@@ -1,0 +1,12 @@
+<?xml version="1.0"?>   
+<layout version="0.1.0">   
+  <jueves_index_index>   
+    <reference name="root">   
+      <action method="setTemplate"><template>page/1column.phtml</template></action>   
+    </reference>   
+    <reference name="content">   
+      <block type="jueves/index" name="jueves_index" template="jueves/index.phtml"/>   
+    </reference>   
+  </jueves_index_index>   
+</layout>   
+	

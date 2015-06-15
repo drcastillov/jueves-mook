@@ -1,0 +1,7 @@
+
+<?xml version="1.0"?>
+<layout version="1.0">
+    <mook_productos_checkout_cart_index>
+        <update handle="checkout_cart_index"/>
+    </mook_productos_checkout_cart_index>
+</layout>

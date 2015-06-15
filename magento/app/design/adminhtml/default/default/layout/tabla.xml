@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<layout>
+    <tabla_adminhtml_productform_index>
+        <reference name="content">
+            <block type="adminhtml/template" name="productform" template="tabla/productform.phtml" />
+        </reference>
+    </tabla_adminhtml_productform_index>
+</layout>
+
+
+
+
+
+
+
+

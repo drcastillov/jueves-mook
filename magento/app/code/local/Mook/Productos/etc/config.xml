@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mook_Productos>
+            <version>0.1.0</version>
+        </Mook_Productos>
+    </modules>
+
+    <global>
+
+        <rewrite>
+            <Mook_Productos_checkout_cart>
+                <from><![CDATA[#^/checkout/cart/#]]></from>
+                <to>/productos/checkout_cart/</to>
+            </Mook_Productos_checkout_cart>
+        </rewrite>
+
+    </global>
+
+    <frontend>
+
+        <routers>
+            <Mook_Productos>
+                <use>standard</use>
+                <args>
+                    <module>Mook_Productos</module>
+                    <frontName>productos</frontName>
+                </args>
+            </Mook_Productos>
+        </routers>
+
+    </frontend>
+
+
+</config>

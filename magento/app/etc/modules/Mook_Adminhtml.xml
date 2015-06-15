@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mook_Adminhtml>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mook_Adminhtml>
+    </modules>
+</config>

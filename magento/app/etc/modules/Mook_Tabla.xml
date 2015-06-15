@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<config>
+	<modules>
+		<Mook_Tabla>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Mook_Tabla>
+	</modules>
+</config>
+
